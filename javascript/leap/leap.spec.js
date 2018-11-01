@@ -5,19 +5,19 @@ describe('A leap year', () => {
     expect(isLeap(2015)).toBeFalsy();
   });
 
-  xtest('year divisible by 4, not divisible by 100: leap year', () => {
+  test('year divisible by 4, not divisible by 100: leap year', () => {
     expect(isLeap(2016)).toBeTruthy();
   });
 
-  xtest('year divisible by 100, not divisible by 400: common year', () => {
+  test('year divisible by 100, not divisible by 400: common year', () => {
     expect(isLeap(2100)).toBeFalsy();
   });
 
-  xtest('year divisible by 400: leap year', () => {
+  test('year divisible by 400: leap year', () => {
     expect(isLeap(2000)).toBeTruthy();
   });
 
-  xtest('year divisible by 200, not divisible by 400: common year', () => {
+  test('year divisible by 200, not divisible by 400: common year', () => {
     expect(isLeap(1800)).toBeFalsy();
   });
 });
