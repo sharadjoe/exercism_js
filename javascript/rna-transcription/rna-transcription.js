@@ -2,12 +2,7 @@ export const toRna = (sequence) => {
     var splitted = sequence.split("")
     var theNew = splitted.map(get)
     var joined = theNew.join("")
-    if (splitted.length !== joined.length){
-        throw "Invalid input DNA."
-    }
-    else {
-        return joined
-    } 
+    return joined
     
 }
 
@@ -22,5 +17,7 @@ function get(value, index, array) {
         return array[index] = 'A';
     } else if (value === 'A') {
         return array[index] = 'U';
-    } 
+    } else {
+        throw "Invalid input DNA."
+    }
 }
