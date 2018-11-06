@@ -17,7 +17,6 @@ describe('Random key cipher', () => {
   test('has a key made of letters', () => {
     expect(cipher.key).toMatch(/^[a-z]+$/);
   });
-
   xtest('has a key that is at least 100 characters long', () => {
     expect(cipher.key.length).toBeGreaterThanOrEqual(100);
   });
