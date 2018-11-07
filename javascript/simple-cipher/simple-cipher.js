@@ -1,3 +1,4 @@
+const sample = 'abcdefghijklmnopqrstuvwxyz';
 export class Cipher {
     constructor(key) {
         if (typeof key === 'undefined') {
@@ -10,10 +11,33 @@ export class Cipher {
     }
     generateKey(){
          var text= ''
-         var sample = 'abcdefghijklmnopqrstuvwxyz'
          for (var i=0;i<101;i++){
              text+=sample.charAt(Math.floor(Math.random()*sample.length))
          }
          return text
+    }
+    encode(message){
+        let ext = ''
+        for(let i=0;i<message.length;i++){
+            let n = sample.indexOf(message[i])
+            let m = sample.indexOf(this.key[i])
+            let ne = (m+n)%26
+            ext+=sample[ne]
+        }
+        return ext
+    }
+    decode(message) {
+        let ext = ''
+        for (let i = 0; i < message.length; i++) {
+            let n = sample.indexOf(message[i])
+            let m = sample.indexOf(this.key[i])
+            if(n-m){
+                var ne = (n-m)%26
+            } else {
+                var ne = (n-m+26)%26
+            }
+            ext+=sample[ne]
+        }
+        return ext
     }
 }
