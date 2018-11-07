@@ -17,7 +17,7 @@ describe('Random key cipher', () => {
   test('has a key made of letters', () => {
     expect(cipher.key).toMatch(/^[a-z]+$/);
   });
-  xtest('has a key that is at least 100 characters long', () => {
+  test('has a key that is at least 100 characters long', () => {
     expect(cipher.key.length).toBeGreaterThanOrEqual(100);
   });
 
@@ -86,7 +86,7 @@ describe('Substitution cipher', () => {
   const key = 'abcdefghij';
   const cipher = new Cipher(key);
 
-  xtest('keeps the submitted key', () => {
+  test('keeps the submitted key', () => {
     expect(cipher.key).toEqual(key);
   });
 
