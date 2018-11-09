@@ -9,9 +9,9 @@ describe('encode', () => {
 
   test('encodes O M G', () => expect(encode('O M G')).toEqual('lnt'));
 
-  xtest('encodes long words', () => expect(encode('mindblowingly')).toEqual('nrmwy oldrm tob'));
+  test('encodes long words', () => expect(encode('mindblowingly')).toEqual('nrmwy oldrm tob'));
 
-  xtest('encodes numbers', () => expect(encode('Testing, 1 2 3, testing.'))
+  test('encodes numbers', () => expect(encode('Testing, 1 2 3, testing.'))
     .toEqual('gvhgr mt123 gvhgr mt'));
 
   xtest('encodes sentences', () => expect(encode('Truth is fiction.')).toEqual('gifgs rhurx grlm'));

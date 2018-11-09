@@ -5,13 +5,14 @@ export const encode = (string) => {
     var count = 0
     var output = ''
     for(var i=0;i<string.length;i++) {
+        var real = parseInt(string[i],10)
         var upper = string[i].toUpperCase()
-        if (!isNaN(string[i])) {
+        if (!isNaN(real)) {
             output += string[i]
             count += 1
         }
         else if (string[i] === " ") {
-            count += 1
+            count = count
         }
         else if(string[i] === upper) {
             var lower = string[i].toLowerCase()
