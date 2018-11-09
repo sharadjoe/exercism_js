@@ -3,9 +3,9 @@ import { encode } from './atbash-cipher';
 describe('encode', () => {
   test('encodes no', () => expect(encode('no')).toEqual('ml'));
 
-  xtest('encodes yes', () => expect(encode('yes')).toEqual('bvh'));
+  test('encodes yes', () => expect(encode('yes')).toEqual('bvh'));
 
-  xtest('encodes OMG', () => expect(encode('OMG')).toEqual('lnt'));
+  test('encodes OMG', () => expect(encode('OMG')).toEqual('lnt'));
 
   xtest('encodes O M G', () => expect(encode('O M G')).toEqual('lnt'));
 
