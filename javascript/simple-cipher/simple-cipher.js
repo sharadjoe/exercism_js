@@ -17,11 +17,18 @@ export class Cipher {
          return text
     }
     encode(message){
+        if (this.key.length < message.length){
+            this.key *= message.length
+        }
         let ext = ''
         for(let i=0;i<message.length;i++){
             let n = sample.indexOf(message[i])
             let m = sample.indexOf(this.key[i])
-            let ne = (m+n)%26
+            if (n + m > 26) {
+                var ne = (n + m-26) % 26
+            } else {
+                var ne = (n + m) % 26
+            }
             ext+=sample[ne]
         }
         return ext
@@ -31,7 +38,7 @@ export class Cipher {
         for (let i = 0; i < message.length; i++) {
             let n = sample.indexOf(message[i])
             let m = sample.indexOf(this.key[i])
-            if(n-m){
+            if(n-m>1){
                 var ne = (n-m)%26
             } else {
                 var ne = (n-m+26)%26
