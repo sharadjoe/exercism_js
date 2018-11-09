@@ -6,17 +6,28 @@ export const encode = (string) => {
     var output = ''
     for(var i=0;i<string.length;i++) {
         var upper = string[i].toUpperCase()
-        if(string[i] === upper) {
+        if (!isNaN(string[i])) {
+            output += string[i]
+            count += 1
+        }
+        else if (string[i] === " ") {
+            count += 1
+        }
+        else if(string[i] === upper) {
             var lower = string[i].toLowerCase()
             var m = sample.indexOf(lower)
             output += reverse[m]
-        }
-        if(string[i]=== " "){
             count+=1
-        } else {
+        }
+        else {
             var m = sample.indexOf(string[i])
             output += reverse[m]   
+            count+=1
         }
+        if(count%5 === 0 ){
+            output += " "
+        }
+        
     }
     return output
 }

@@ -7,7 +7,7 @@ describe('encode', () => {
 
   test('encodes OMG', () => expect(encode('OMG')).toEqual('lnt'));
 
-  xtest('encodes O M G', () => expect(encode('O M G')).toEqual('lnt'));
+  test('encodes O M G', () => expect(encode('O M G')).toEqual('lnt'));
 
   xtest('encodes long words', () => expect(encode('mindblowingly')).toEqual('nrmwy oldrm tob'));
 
