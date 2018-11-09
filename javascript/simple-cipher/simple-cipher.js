@@ -18,7 +18,7 @@ export class Cipher {
     }
     encode(message){
         if (this.key.length < message.length){
-            this.key *= message.length
+            this.key = this.key.repeat(message.length)
         }
         let ext = ''
         for(let i=0;i<message.length;i++){
