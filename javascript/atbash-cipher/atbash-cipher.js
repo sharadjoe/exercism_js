@@ -2,13 +2,13 @@ const sample = "abcdefghijklmnopqrstuvwxyz"
 const reverse = "zyxwvutsrqponmlkjihgfedcba"
 
 export const encode = (string) => {
+    string = string.replace(/[^a-zA-Z0-9]/g, '')
     var count = 0
     var output = ''
     for(var i=0;i<string.length;i++) {
-        var real = parseInt(string[i],10)
         var upper = string[i].toUpperCase()
-        if (!isNaN(real)) {
-            output += string[i]
+        if (Number(string[i])) {
+            output += real
             count += 1
         }
         else if (string[i] === " ") {
@@ -26,7 +26,11 @@ export const encode = (string) => {
             count+=1
         }
         if(count%5 === 0 ){
+            output+=count
             output += " "
+        }
+        if(string[string.length-1]= " "){
+            output -= " "
         }
         
     }

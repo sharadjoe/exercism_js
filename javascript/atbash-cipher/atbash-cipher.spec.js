@@ -14,8 +14,8 @@ describe('encode', () => {
   test('encodes numbers', () => expect(encode('Testing, 1 2 3, testing.'))
     .toEqual('gvhgr mt123 gvhgr mt'));
 
-  xtest('encodes sentences', () => expect(encode('Truth is fiction.')).toEqual('gifgs rhurx grlm'));
+  test('encodes sentences', () => expect(encode('Truth is fiction.')).toEqual('gifgs rhurx grlm'));
 
-  xtest('encodes all the things', () => expect(encode('The quick brown fox jumps over the lazy dog.'))
+  test('encodes all the things', () => expect(encode('The quick brown fox jumps over the lazy dog.'))
     .toEqual('gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt'));
 });
