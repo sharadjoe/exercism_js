@@ -11,17 +11,17 @@ describe('Crypto', () => {
     expect(crypto.normalizePlaintext()).toEqual('123go');
   });
 
-  xtest('size of small square', () => {
+  test('size of small square', () => {
     const crypto = new Crypto('1234');
     expect(crypto.size()).toEqual(2);
   });
 
-  xtest('size of small square with additional non-number chars', () => {
+  test('size of small square with additional non-number chars', () => {
     const crypto = new Crypto('1 2 3 4');
     expect(crypto.size()).toEqual(2);
   });
 
-  xtest('size of slightly larger square', () => {
+  test('size of slightly larger square', () => {
     const crypto = new Crypto('123456789');
     expect(crypto.size()).toEqual(3);
   });
