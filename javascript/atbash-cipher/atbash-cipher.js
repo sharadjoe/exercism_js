@@ -6,6 +6,7 @@ export const encode = (string) => {
     var count = 0
     var output = ''
     for(var i=0;i<string.length;i++) {
+        var real = parseInt(string[i],10)
         var upper = string[i].toUpperCase()
         if (Number(string[i])) {
             output += real
@@ -25,12 +26,8 @@ export const encode = (string) => {
             output += reverse[m]   
             count+=1
         }
-        if(count%5 === 0 ){
-            output+=count
+        if(count%5 === 0 && i !== string.length-1){
             output += " "
-        }
-        if(string[string.length-1]= " "){
-            output -= " "
         }
         
     }
