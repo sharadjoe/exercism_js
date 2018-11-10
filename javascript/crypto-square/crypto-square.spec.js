@@ -26,7 +26,7 @@ describe('Crypto', () => {
     expect(crypto.size()).toEqual(3);
   });
 
-  xtest('size of non-perfect square', () => {
+  test('size of non-perfect square', () => {
     const crypto = new Crypto('123456789abc');
     expect(crypto.size()).toEqual(4);
   });
