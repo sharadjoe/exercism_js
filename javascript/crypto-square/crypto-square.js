@@ -1,4 +1,4 @@
-
+var r=1,c=1
 module.exports = class Crypto {
     constructor(string){
         this.string  = string
@@ -11,7 +11,6 @@ module.exports = class Crypto {
         return this.string
     }
     size(){
-        var c=1,r=1
         while((c*r)<this.string.length){
             if(c>=r && (c-r)<=1){
                 r+=1
@@ -22,13 +21,14 @@ module.exports = class Crypto {
         return r
     }
     plaintextSegments(){
+        var siz = this.size()
         var segments = []
-        var coun = 0,start=0,end =  r
-        while(coun <= c){
+        var coun = 0,start=0,end = r
+        while(coun < c){
             var slice = this.string.slice(start,end)
             segments.push(slice)
             start+= r
-            end += start
+            end += r
             coun += 1                                
         }
         return segments
