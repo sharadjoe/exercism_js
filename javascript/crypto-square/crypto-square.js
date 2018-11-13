@@ -6,8 +6,6 @@ module.exports = class Crypto {
         this.row = 1
         this.col = 1
         this.siz = this.size()
-        this.seg = this.plaintextSegments()
-        this.normal = this.segmentNormalisation()
     }
 
     normalizePlaintext(){
@@ -40,17 +38,11 @@ module.exports = class Crypto {
         return segments
     }
 
-    segmentNormalisation(){
-        if(this.seg[this.row].length<c){
-            while(this.seg[this.row].length===c){
-                this.seg[this.row]+=''
-            }
-        }
-    }
 
     ciphertext(){
         var cipher = []
         var joined = this.normal.join("")
+        return joined
     }
     
 }
