@@ -17,5 +17,12 @@ module.exports = class DiffieHellman{
             return flag
         }
     }
+
+    getPublicKeyFromPrivateKey(privateKey){
+        if(!((privateKey)>1 && (privateKey<this.firstNumber))){
+            throw "Error in private key"
+
+        }
+    }
     
 }
