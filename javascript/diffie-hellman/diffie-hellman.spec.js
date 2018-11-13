@@ -62,7 +62,7 @@ describe('diffie-hellman', () => {
     expect(diffieHellman.getPublicKeyFromPrivateKey(bobPrivateKey)).toEqual(bobPublicKey);
   });
 
-  xtest('can generate a shared secret from our private key and their public key', () => {
+  test('can generate a shared secret from our private key and their public key', () => {
     const sharedSecret = 2;
 
     expect(diffieHellman.getSharedSecret(alicePrivateKey, bobPublicKey))

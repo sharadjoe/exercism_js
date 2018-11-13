@@ -26,7 +26,15 @@ module.exports = class DiffieHellman{
             throw "Error in key"
         }
         return key
+    }
 
+    getSharedSecret(firstPrivateKey, secondPrivateKey){
+        var firstPublicKey = Math.pow(this.secNumber,firstPrivateKey)%this.firstNumber
+        var secPublickey = Math.pow(this.secNumber,secondPrivateKey)%this.firstNumber
+        var firstSharedSecret = Math.pow(secPublickey,firstPrivateKey)%this.firstNumber
+        var secSharedSecret = Math.pow(firstPublicKey, secondPrivateKey) % this.firstNumber
+
+        return firstSharedSecret
     }
     
 }
