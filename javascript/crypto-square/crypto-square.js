@@ -36,6 +36,9 @@ module.exports = class Crypto {
             coun += 1                                
         }
         return segments
+    }
+
+    ciphertext(){
         
     }
     
