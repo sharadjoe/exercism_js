@@ -18,7 +18,7 @@ describe('diffie-hellman', () => {
     }).toThrow();
   });
 
-  xtest('throws an error if the constructor arguments are not prime', () => {
+  test('throws an error if the constructor arguments are not prime', () => {
     expect(() => {
       new DiffieHellman(10, 13);
     }).toThrow();
