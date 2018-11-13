@@ -5,6 +5,9 @@ module.exports = class Crypto {
         this.string = normalised
         this.row = 1
         this.col = 1
+        this.siz = this.size()
+        this.seg = this.plaintextSegments()
+        this.normal = this.segmentNormalisation()
     }
 
     normalizePlaintext(){
@@ -25,21 +28,29 @@ module.exports = class Crypto {
     }
 
     plaintextSegments(){
-        var siz = this.size()
         var segments = []
-        var coun = 0,start=0,end = siz
+        var coun = 0,start=0,end = this.siz
         while(coun < this.col){
             var slice = this.string.slice(start,end)
             segments.push(slice)
-            start+= siz
-            end += siz
+            start+= this.siz
+            end += this.siz
             coun += 1                                
         }
         return segments
     }
 
+    segmentNormalisation(){
+        if(this.seg[this.row].length<c){
+            while(this.seg[this.row].length===c){
+                this.seg[this.row]+=''
+            }
+        }
+    }
+
     ciphertext(){
-        
+        var cipher = []
+        var joined = this.normal.join("")
     }
     
 }
