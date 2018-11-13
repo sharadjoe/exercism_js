@@ -36,7 +36,7 @@ describe('Crypto', () => {
     expect(crypto.plaintextSegments()).toEqual(['neverv', 'exthin', 'eheart', 'withid', 'lewoes']);
   });
 
-  xtest('plain text segments', () => {
+  test('plain text segments', () => {
     const crypto = new Crypto('ZOMG! ZOMBIES!!!');
     expect(crypto.plaintextSegments()).toEqual(['zomg', 'zomb', 'ies']);
   });
