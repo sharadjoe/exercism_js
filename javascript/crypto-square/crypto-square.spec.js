@@ -41,12 +41,12 @@ describe('Crypto', () => {
     expect(crypto.plaintextSegments()).toEqual(['zomg', 'zomb', 'ies']);
   });
 
-  test('cipher text', () => {
+  xtest('cipher text', () => {
     const crypto = new Crypto('Time is an illusion. Lunchtime doubly so.');
     expect(crypto.ciphertext()).toEqual('tasneyinicdsmiohooelntuillibsuuml');
   });
 
-  xtest('cipher text', () => {
+  test('cipher text', () => {
     const crypto = new Crypto('We all know interspecies romance is weird.');
     expect(crypto.ciphertext()).toEqual('wneiaweoreneawssciliprerlneoidktcms');
   });
