@@ -41,7 +41,7 @@ describe('Crypto', () => {
     expect(crypto.plaintextSegments()).toEqual(['zomg', 'zomb', 'ies']);
   });
 
-  xtest('cipher text', () => {
+  test('cipher text', () => {
     const crypto = new Crypto('Time is an illusion. Lunchtime doubly so.');
     expect(crypto.ciphertext()).toEqual('tasneyinicdsmiohooelntuillibsuuml');
   });

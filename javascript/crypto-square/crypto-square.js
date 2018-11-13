@@ -41,17 +41,22 @@ module.exports = class Crypto {
 
 
     ciphertext(){
-        var cipher = [],count=0
+        var cipher = [],count=0,c=0,f
         while(this.seg[this.row-1].length!==this.col){
             this.seg[this.row-1]+=" "
         }
         this.seg = this.seg.join("")
         for(var i=0;i<this.col;i++){
+            count=c
             while(count<this.row*this.col){
-                cipher+=this.seg[count]
-                count+=this.col
+                if(this.seg[count]===" "){
+                    count+=this.col
+                } else {
+                    cipher+=this.seg[count]
+                    count+=this.col
+                }
             }
-            count+=1
+            c+=1
         }
         return cipher
     }
