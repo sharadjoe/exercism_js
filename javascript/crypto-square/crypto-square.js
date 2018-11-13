@@ -42,13 +42,14 @@ module.exports = class Crypto {
 
     ciphertext(){
         var cipher = []
-        if(this.seg[this.row-1].length !==this.col){
-            while(this.seg[this.row-1].length!==this.col){
-                this.seg[this.row-1]+=" "
-            }
+        while(this.seg[this.row-1].length!==this.col){
+            this.seg[this.row-1]+=" "
         }
+        this.seg = this.seg.join("")
         return this.seg
+        
     }
+  
 
     
 }
