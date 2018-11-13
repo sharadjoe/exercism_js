@@ -19,10 +19,14 @@ module.exports = class DiffieHellman{
     }
 
     getPublicKeyFromPrivateKey(privateKey){
-        if(!((privateKey)>1 && (privateKey<this.firstNumber))){
-            throw "Error in private key"
-
+        var key = 0
+        if((privateKey)>1 && !(privateKey>=this.firstNumber)){
+            key = Math.pow(this.secNumber,privateKey)%this.firstNumber
+        }else{
+            throw "Error in key"
         }
+        return key
+
     }
     
 }

@@ -54,7 +54,7 @@ describe('diffie-hellman', () => {
     }).toThrow();
   });
 
-  xtest('when given a private key, returns the correct public one', () => {
+  test('when given a private key, returns the correct public one', () => {
     expect(diffieHellman.getPublicKeyFromPrivateKey(alicePrivateKey)).toEqual(alicePublicKey);
   });
 
