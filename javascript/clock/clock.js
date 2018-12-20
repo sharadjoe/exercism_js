@@ -1,10 +1,15 @@
 function at(hour, minute=0) {
-    if(Math.floor(minute/60)>=1){
-        hour+=Math.floor(minute/60)
-        minute = minute%60
+    hour = (Math.floor(minute/60)) + (hour%24)
+    while(hour<0){
+        hour+=24
     }
+    hour = hour % 24
+    if(minute<0){
+        minute = (minute%60) + 60
+    }
+    minute = minute%60
     var minuteInString = minute.toString()
-    var hourInString = (hour % 24).toString()
+    var hourInString = hour.toString()
     if(minuteInString.length === 1) {
         minuteInString = '0' + minuteInString
     }
@@ -14,5 +19,7 @@ function at(hour, minute=0) {
     return(hourInString + ':' + minuteInString)
 
 }
+
+
 
 export default at
