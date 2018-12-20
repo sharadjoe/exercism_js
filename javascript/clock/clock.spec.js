@@ -14,11 +14,11 @@ describe('Clock', () => {
       expect(at(24, 0).toString()).toEqual('00:00');
     });
 
-    xtest('hour rolls over', () => {
+    test('hour rolls over', () => {
       expect(at(25, 0).toString()).toEqual('01:00');
     });
 
-    xtest('hour rolls over continuously', () => {
+    test('hour rolls over continuously', () => {
       expect(at(100, 0).toString()).toEqual('04:00');
     });
 
