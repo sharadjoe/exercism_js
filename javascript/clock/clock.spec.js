@@ -22,7 +22,7 @@ describe('Clock', () => {
       expect(at(100, 0).toString()).toEqual('04:00');
     });
 
-    xtest('sixty minutes is next hour', () => {
+    test('sixty minutes is next hour', () => {
       expect(at(1, 60).toString()).toEqual('02:00');
     });
 
