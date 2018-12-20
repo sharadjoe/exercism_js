@@ -1,4 +1,5 @@
-function at(hour, minute=0) {
+const plus = (minutesToAdd) => at(0, minute + minutesToAdd);
+function at(hour=0, minute=0) {
     hour = (Math.floor(minute/60)) + (hour%24)
     while(hour<0){
         hour+=24
@@ -16,9 +17,16 @@ function at(hour, minute=0) {
     if(hourInString.length === 1) {
         hourInString = '0' + hourInString
     }
-    return(hourInString + ':' + minuteInString)
+    var result = hourInString + ':' + minuteInString
+    return{
+        toString: () => result,
+        plus: (minToAdd) => at(hour, minute + minToAdd),
+        minus: (minToSub) => at(hour, minute - minToSub),
+    }
 
 }
+
+
 
 
 
