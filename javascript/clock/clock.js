@@ -22,6 +22,7 @@ function at(hour=0, minute=0) {
         toString: () => result,
         plus: (minToAdd) => at(hour, minute + minToAdd),
         minus: (minToSub) => at(hour, minute - minToSub),
+        equals: obj=> obj.toString() === result
     }
 
 }
