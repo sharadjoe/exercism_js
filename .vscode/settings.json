@@ -1,4 +1,5 @@
 {
     "git.ignoreLimitWarning": true,
-    "eslint.enable": false
+    "eslint.enable": false,
+    "python.pythonPath": "/usr/local/bin/python3"
 }
