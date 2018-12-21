@@ -1,19 +1,6 @@
-module.exports = class Grains {
-    constructor() {
-        var i=0
-        this.count = []
-        while(i<65){
-            if(i==1 || i==0 ){
-                this.count.push(1)
-            }else{
-                this.count.push(this.count[i-1]*2)
+import bigInt from './lib/big-integer';
 
-            }
-            i+=1
-        }
-    }
-    square(index) {
-        return (this.count[index]).toString()
-    }
-    
-}
+export default () => ({
+    square: (n) => bigInt(2).pow(n - 1).toString(),
+    total: () => bigInt(2).pow(64).minus(1).toString()
+})

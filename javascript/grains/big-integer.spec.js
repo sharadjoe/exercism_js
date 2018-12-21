@@ -1,10 +1,10 @@
-import BigInt from './big-integer';
+import bigInt from './lib/big-integer';
 
 describe('The big-integer module\'s returned object', () => {
   let bigI;
 
   beforeEach(() => {
-    bigI = BigInt(42);
+    bigI = bigInt(42);
   });
 
   afterEach(() => {
@@ -45,7 +45,7 @@ describe('The big-integer module\'s returned object', () => {
   });
 
   test('can perform power operations', () => {
-    bigI = BigInt(10);
+    bigI = bigInt(10);
     bigI = bigI.pow(2);
     expect(bigI.toString()).toBe('100');
   });
@@ -53,5 +53,5 @@ describe('The big-integer module\'s returned object', () => {
   // ...see the official docs for more info, if you want.
   // The "Methods" section of the README is especially useful:
   //
-  // https://github.com/peterolson/BigInteger.js#methods
+  // https://github.com/peterolson/bigInteger.js#methods
 });
