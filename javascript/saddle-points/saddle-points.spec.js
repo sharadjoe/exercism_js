@@ -6,17 +6,17 @@ describe('Matrix', () => {
     expect(matrix.rows[0]).toEqual([1, 2]);
   });
 
-  xtest('extracts other row', () => {
+  test('extracts other row', () => {
     const matrix = new Matrix('9 8 7\n19 18 17');
     expect(matrix.rows[1]).toEqual([19, 18, 17]);
   });
 
-  xtest('extracts a column', () => {
+  test('extracts a column', () => {
     const matrix = new Matrix('1 2 3\n4 5 6\n7 8 9\n 8 7 6');
     expect(matrix.columns[0]).toEqual([1, 4, 7, 8]);
   });
 
-  xtest('extracts another column', () => {
+  test('extracts another column', () => {
     const matrix = new Matrix('89 1903 3\n18 3 1\n9 4 800');
     expect(matrix.columns[1]).toEqual([1903, 3, 4]);
   });
