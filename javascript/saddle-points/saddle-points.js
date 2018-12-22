@@ -1,21 +1,20 @@
-function convertIntoRows(string) {
-    return string.split('\n').map(row => row.split(' ').map(char => parseInt(char, 10)))
-}
+class Matrix {
+    constructor(mtx) {
+        this.rows = mtx.split('\n').map(line => line.trim().split(' ').map(v => +v))
+        this.columns = this.rows[0].map((_, col) => this.rows.map(row => row[col]))
 
-function convertIntoColumns(rows) {
-    const col = []
-    rows.forEach((row) => {
-        row.forEach((n, index) => {
-            col[index] = col[index] || []
-            col[index].push(n)
-        })
-    })
-    return col
-}
-
-module.exports = class Matrix {
-    constructor(string) {
-        this.rows = convertIntoRows(string)
-        this.columns = convertIntoColumns(this.rows)
+        // cell >= every row ele && <= every col ele
+        this.saddlePoints = []
+        for (let r = 0; r < this.rows.length; r++) {
+            for (let c = 0; c < this.rows[0].length; c++) {
+                const cell = this.rows[r][c]
+                if (cell === Math.max(...this.rows[r]) &&
+                    cell === Math.min(...this.columns[c])) {
+                    this.saddlePoints.push([r, c])
+                }
+            }
+        }
     }
 }
+
+export default Matrix
