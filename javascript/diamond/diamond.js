@@ -17,7 +17,8 @@ module.exports = class Diamond{
                 if(first===0 && row.length<space_count){
                     if(count==mid || mid==0){row = row+alpha[k]
                     count-=1
-                    k+=1}else {
+                    k+=1
+                    }else {
                         row = row+ " "
                         count-=1
                     }
