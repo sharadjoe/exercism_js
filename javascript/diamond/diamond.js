@@ -1,4 +1,3 @@
-var final = []
 
 var alpha = "ABCDEFGHIJKLMNOPQRSTUVWIYZ"
 module.exports = class Diamond{
@@ -10,17 +9,15 @@ module.exports = class Diamond{
     }
 
     makeDiamond(){
-        var row = "", j=1
+        var row = "", j=1,final=[]
         const index = (alpha.indexOf(this.char))+2
         const space_count = this.countSpace(index)
-        while (j <= space_count) {
-            row = row+ " "
-            j += 1
-        }
+        var count = space_count
         for(var i=0;i<index;i++){
             var mid = Math.floor(space_count/2)
-            if(i===0){
-                row[i] = alpha[i]
+            while(count !== 0){
+                row = row+alpha[i]+'\n'
+                count-=1
             }
             final.push(row)
         }
