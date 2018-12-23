@@ -1,24 +1,33 @@
-
-var alpha = "ABCDEFGHIJKLMNOPQRSTUVWIYZ"
 module.exports = class Diamond{
-    constructor(char) {
-        this.char = char
-        this.result = this.makeDiamond()
-        return this.result
-        
-    }
-
-    makeDiamond(){
-        var row = "", j=1,final=[]
-        const index = (alpha.indexOf(this.char))+2
-        const space_count = this.countSpace(index)
+    makeDiamond(char){
+        var row = "",
+            j = 1,
+            k=0,
+            final = [],
+            alpha = "ABCDEFGHIJKLMNOPQRSTUVWIYZ",
+            index = (alpha.indexOf(char))+1,
+            space_count = this.countSpace(index)
+        //return index
+        var mid = Math.floor(space_count / 2)        
         var count = space_count
         for(var i=0;i<index;i++){
-            var mid = Math.floor(space_count/2)
+            var firstEntry = mid-j, lastEntry = mid+j
             while(count !== 0){
-                row = row+alpha[i]+'\n'
-                count-=1
+                if(count===mid){
+                    row = row+alpha[k]
+                    count-=1
+                    k+=1
+                } else if(count===firstEntry || count===lastEntry){
+                    row = row+alpha[k]
+                    count-=1
+                    k+=1
+                }else {
+                    row= row+ " "
+                    count-=1
+                }
+                j+=1
             }
+            row = row+'\n'
             final.push(row)
         }
         return final.join('\n')
