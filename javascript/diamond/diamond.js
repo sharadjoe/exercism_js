@@ -14,25 +14,8 @@ module.exports = class Diamond{
             var count = space_count
             var firstEntry = mid-j, lastEntry = mid+j
             while(count !== 0){
-                if(first===0 && row.length<space_count){
-                    if(count==mid || mid==0){row = row+alpha[k]
-                    count-=1
-                    k+=1
-                    }else {
-                        row = row+ " "
-                        count-=1
-                    }
-                } else if((count===firstEntry || count===lastEntry) && first!==0){
-                    row = row+alpha[k]
-                    count-=1
-                    k+=1
-                }else {
-                    row= row+ " "
-                    count-=1
-                }
-                j+=1
+                
             }
-            row = row+'\n'
             final.push(row)
         }
         return final.join('\n')
