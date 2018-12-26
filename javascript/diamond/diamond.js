@@ -8,13 +8,13 @@ module.exports = class Diamond{
             index = (alpha.indexOf(char))+1,
             space_count = this.countSpace(index),
             first=0,
-            k=-1
+            k=0,iter=[]
 
         //return index
         //TODO:  ONE CHAR AND FIRST LINE FUNCTION
-        k+=1
         var mid = (Math.floor(space_count / 2))+1        
         for(var i=0;i<index;i++){
+            row=""
             var count = space_count
             var firstEntry = mid-j, lastEntry = mid+j
             while(count !== 0){
@@ -22,31 +22,26 @@ module.exports = class Diamond{
                     row = row+alpha[k]
                     count-=1
                 }
-                else if(first===0){
+                if(first===0){
                     if(count === mid){row = row+alpha[k]
                     count-=1
                     k+=1
+                    iter.push(count)
                     }else if(row.length === count){
                         first = 1
                     }else {
                         row = row+ " "
                         count-=1
-                    }
-                } else if((count === firstEntry || count === lastEntry) && first!==0){
-                    row = row+alpha[k]
-                    count-=1
+                        iter.push(count)
 
-                    k+=1
-                
-                }else {
-                    row= row+ " "
-                    count-=1
+                    }
                 }
                 j+=1
             }
             
             final.push(row)
         }
+        return iter
         final[final.length - 1]+="\n"
         return final.join('\n')
         
