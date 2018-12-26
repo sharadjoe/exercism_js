@@ -25,8 +25,9 @@ module.exports = class Diamond{
                 else if(first===0){
                     if(count === mid){row = row+alpha[k]
                     count-=1
-                    first = 1
                     k+=1
+                    }else if(row.length === count){
+                        first = 1
                     }else {
                         row = row+ " "
                         count-=1
@@ -43,9 +44,10 @@ module.exports = class Diamond{
                 }
                 j+=1
             }
-            if(count === 0){row = row+"\n"}
+            
             final.push(row)
         }
+        final[final.length - 1]+="\n"
         return final.join('\n')
         
     }
