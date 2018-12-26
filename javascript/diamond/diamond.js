@@ -47,12 +47,10 @@ module.exports = class Diamond{
                             k += 1
                         }
                     }
-                
                 }else {
                     row= row+ " "
                     count-=1
                 }
-                
             }
             j+=1
             final.push(row)
@@ -60,14 +58,11 @@ module.exports = class Diamond{
         if((i-1)===index){
             var d=[]
             for(j =(index-2);j>=0;j--){
-                final.push(final[j])
-                
+                final.push(final[j])   
             }
             final[final.length - 1] += "\n"
             return final.join("\n")
         }
-        
-        
     }
 
     countSpace(index){
