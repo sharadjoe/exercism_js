@@ -17,7 +17,7 @@ describe('Make diamond function', () => {
     expect(diamond.makeDiamond('C')).toEqual(result);
   });
 
-  xtest('test letter E', () => {
+  test('test letter E', () => {
     const result = `${['    A    ',
       '   B B   ',
       '  C   C  ',
