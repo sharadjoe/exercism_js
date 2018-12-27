@@ -1,34 +1,24 @@
-export const secretHandshake = (decimal) =>{
-    var binary = toBinary(decimal)
-    var res = []
-    if (Math.floor(binary / 1000)) {
-        res.push('jump')
-        binary = binary % 1000
-    }
-    if (Math.floor(binary / 100)) {
-        res.push('close your eyes')
-        binary = binary % 100
-    }
-    if (Math.floor(binary / 10)) {
-        res.push('double blink')
-        binary = binary % 10
-    }
-    if (Math.floor(binary / 1)) {
-        res.push('wink')
-        binary = binary % 1
-    }
-    return res.reverse()
-    
+let SecretHandshake = function (number) {
+    if (isNaN(number))
+        throw new Error('Handshake must be a number');
+    this.number = number;
+};
 
-}
+SecretHandshake.prototype.commands = function () {
+    let commands = [];
 
-function toBinary(decimal){
-    var str="",val
-    while(decimal>0){
-        val = decimal%2
-        str+=val
-        decimal = Math.floor(decimal/2)
-    }
-    str = parseInt(str.split("").reverse().join(""))
-    return str
-}
+    if (this.number & 0b1)
+        commands.push('wink');
+    if (this.number & 0b10)
+        commands.push('double blink');
+    if (this.number & 0b100)
+        commands.push('close your eyes');
+    if (this.number & 0b1000)
+        commands.push('jump');
+    if (this.number & 0b10000)
+        commands.reverse();
+
+    return commands;
+};
+
+module.exports = SecretHandshake;
