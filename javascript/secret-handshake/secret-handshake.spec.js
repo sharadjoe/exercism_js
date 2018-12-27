@@ -1,7 +1,7 @@
 import { secretHandshake } from './secret-handshake';
 
 describe('Secret Handshake', () => {
-  xtest('binary 1 (decimal 1) is a wink', () => {
+  test('binary 1 (decimal 1) is a wink', () => {
     expect(secretHandshake(1)).toEqual(['wink']);
   });
 
@@ -9,15 +9,15 @@ describe('Secret Handshake', () => {
     expect(secretHandshake(2)).toEqual(['double blink']);
   });
 
-  xtest('binary 100 (decimal 4) is close your eyes', () => {
+  test('binary 100 (decimal 4) is close your eyes', () => {
     expect(secretHandshake(4)).toEqual(['close your eyes']);
   });
 
-  xtest('binary 1000 (decimal 8) is jump', () => {
+  test('binary 1000 (decimal 8) is jump', () => {
     expect(secretHandshake(8)).toEqual(['jump']);
   });
 
-  xtest('binary 11 (decimal 3) is wink and double blink', () => {
+  test('binary 11 (decimal 3) is wink and double blink', () => {
     expect(secretHandshake(3)).toEqual(['wink', 'double blink']);
   });
 
