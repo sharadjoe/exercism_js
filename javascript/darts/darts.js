@@ -3,6 +3,9 @@ export const solve = (xCordinate, yCordinate) => {
         return null
     }else{
         var euclideanDistance = Math.sqrt((xCordinate * xCordinate) + (yCordinate * yCordinate))
+        if(euclideanDistance===0){
+            return 10
+        }
         if(euclideanDistance>10){
             return 0
         }else if(euclideanDistance<=10 && euclideanDistance>5){
