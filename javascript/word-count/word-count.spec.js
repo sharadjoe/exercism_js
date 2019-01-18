@@ -8,7 +8,7 @@ describe('words()', () => {
     expect(words.count('word')).toEqual(expectedCounts);
   });
 
-  xtest('counts one of each', () => {
+  test('counts one of each', () => {
     const expectedCounts = { one: 1, of: 1, each: 1 };
     expect(words.count('one of each')).toEqual(expectedCounts);
   });
