@@ -5,17 +5,17 @@ describe('Series', () => {
     expect(new Series('01234').digits).toEqual([0, 1, 2, 3, 4]);
   });
 
-  xtest('has digits (long)', () => {
+  test('has digits (long)', () => {
     expect(new Series('0123456789').digits)
       .toEqual([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
   });
 
-  xtest('keeps the digit order if reversed', () => {
+  test('keeps the digit order if reversed', () => {
     expect(new Series('9876543210').digits)
       .toEqual([9, 8, 7, 6, 5, 4, 3, 2, 1, 0]);
   });
 
-  xtest('keeps arbitrary digit order', () => {
+  test('keeps arbitrary digit order', () => {
     expect(new Series('936923468').digits)
       .toEqual([9, 3, 6, 9, 2, 3, 4, 6, 8]);
   });
