@@ -6,15 +6,15 @@ describe('difference-of-squares', () => {
   const squares100 = new Squares(100);
 
   describe('Square the sum of the numbers up to the given number', () => {
-    xtest('square of sum 1', () => {
+    test('square of sum 1', () => {
       expect(squares1.squareOfSum).toBe(1);
     });
 
-    xtest('square of sum 5', () => {
+    test('square of sum 5', () => {
       expect(squares5.squareOfSum).toBe(225);
     });
 
-    xtest('square of sum 100', () => {
+    test('square of sum 100', () => {
       expect(squares100.squareOfSum).toBe(25502500);
     });
   });
