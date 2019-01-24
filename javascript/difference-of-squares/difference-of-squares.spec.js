@@ -20,15 +20,15 @@ describe('difference-of-squares', () => {
   });
 
   describe('Sum the squares of the numbers up to the given number', () => {
-    xtest('sum of squares 1', () => {
+    test('sum of squares 1', () => {
       expect(squares1.sumOfSquares).toBe(1);
     });
 
-    xtest('sum of squares 5', () => {
+    test('sum of squares 5', () => {
       expect(squares5.sumOfSquares).toBe(55);
     });
 
-    xtest('sum of squares 100', () => {
+    test('sum of squares 100', () => {
       expect(squares100.sumOfSquares).toBe(338350);
     });
   });
