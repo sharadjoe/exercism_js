@@ -34,15 +34,15 @@ describe('difference-of-squares', () => {
   });
 
   describe('Subtract sum of squares from square of sums', () => {
-    xtest('difference of squares 1', () => {
+    test('difference of squares 1', () => {
       expect(squares1.difference).toBe(0);
     });
 
-    xtest('difference of squares 5', () => {
+    test('difference of squares 5', () => {
       expect(squares5.difference).toBe(170);
     });
 
-    xtest('difference of squares 100', () => {
+    test('difference of squares 100', () => {
       expect(squares100.difference).toBe(25164150);
     });
   });

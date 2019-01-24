@@ -3,6 +3,7 @@ export class Squares {
         this.limit = limit
         this.squareOfSum = this.squareOfSum(this.limit)
         this.sumOfSquares = this.sumOfSquares(this.limit)
+        this.difference = this.squareOfSum - this.sumOfSquares 
     }
     squareOfSum(limit){
         return Math.pow(limit*(limit+1)/2,2)
