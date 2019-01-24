@@ -3,21 +3,26 @@ export const bracketPush = (string) => {
         i=0,
         goodList=[],
         badList=[]
-    while(i<divided.length+1){
-        if(divided[i]==='{' || divided[i]==='['){
+    while(i<divided.length){
+        if (divided[i] === '{' || divided[i] === '[' || divided[i] === '(' ) {
             goodList.push(divided[i])
-        }   else    {
+        }   else     {
             badList.push(divided[i])
         }
         i+=1
     }
-    goodList.forEach((element) => {
-        if(element==="["){
-            element = "]"
-        }   else    {
-            element = "}"
+    i=0
+    while(i<goodList.length){
+        if(goodList[i]==="["){
+            goodList[i] = "]"
+        }if(goodList[i] === "("){
+            goodList[i] = ")"
+        }if(goodList[i] === "{"){
+            goodList[i] = "}"
         }
-    })
+        i+=1
+    }
+    return badList.join("")
     if(goodList.join("")===badList.join("")){
         return true
     }   else    {

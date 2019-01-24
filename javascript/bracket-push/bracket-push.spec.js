@@ -1,7 +1,7 @@
 import { bracketPush } from './bracket-push';
 
 describe('bracket push', () => {
-  test('checks for appropriate bracketing in a set of brackets', () => {
+  xtest('checks for appropriate bracketing in a set of brackets', () => {
     expect(bracketPush('{}')).toEqual(true);
   });
 
@@ -29,7 +29,7 @@ describe('bracket push', () => {
     expect(bracketPush('{[)][]}')).toEqual(false);
   });
 
-  xtest('checks bracket closure in a long string of brackets', () => {
+  test('checks bracket closure in a long string of brackets', () => {
     expect(bracketPush('{[]([()])}')).toEqual(true);
   });
 });
