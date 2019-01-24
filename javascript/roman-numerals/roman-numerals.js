@@ -19,8 +19,8 @@ export function toRoman(number) {
 
   mappings.forEach((element) => {
       while(remainingNumber>=element.arabic){
-          result+=mappings.roman
-          remainingNumber-=mappings.arabic
+          result+=element.roman
+          remainingNumber-=element.arabic
       }
   })
   return result
