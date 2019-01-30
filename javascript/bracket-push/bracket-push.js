@@ -6,8 +6,11 @@ export const bracketPush = (string) => {
     while(i<divided.length){
         if ((divided[i] === '{' || divided[i] === '[' || divided[i] === '(') ) {
             goodList.push(divided[i])
-        }else  if(goodList.length!==divided.length){
-            var oppo = opposite(goodList.pop()) || ""
+            if (goodList.length === divided.length) {
+                return false
+            }
+        }else{
+            var oppo = opposite(goodList.pop())
             if(oppo===divided[i]){
                 count+=1
             }else{
