@@ -22,13 +22,13 @@ describe('append entries to a list and return the new list', () => {
 
 
 describe('concat lists and lists of lists into new list', () => {
-  xtest('empty list', () => {
+  test('empty list', () => {
     const list1 = new List();
     const list2 = new List();
     expect(list1.concat(list2).values).toEqual([]);
   });
 
-  xtest('list of lists', () => {
+  test('list of lists', () => {
     const list1 = new List([1, 2]);
     const list2 = new List([3]);
     const list3 = new List([]);
