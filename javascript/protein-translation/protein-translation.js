@@ -5,27 +5,41 @@ export const translate  = (string=" ") => {
     }
     var split_string = splitter(string)
     var len = split_string.length
-    for(i=0;i<len;i+=1){
+    for(var i=0;i<len;i+=1){
         if(split_string[i]==="AUG"){
             res.push("Methionine")
         }
-        if(split_string[i]==="UUU" || split_string[i]==="UUC"){
+        else if(split_string[i]==="UUU" || split_string[i]==="UUC"){
             res.push("Phenylalanine")
         }
-        if (split_string[i] === "UCU" || split_string[i] === "UCC" || split_string[i] === "UCA" || split_string[i] === "UCG") {
+        else if (split_string[i] === "UCU" || split_string[i] === "UCC" || split_string[i] === "UCA" || split_string[i] === "UCG") {
             res.push("Serine")
         }
-        if(split_string[i]==="UAU" || split_string[i]==="UAC"){
+        else if(split_string[i]==="UAU" || split_string[i]==="UAC"){
             res.push("Tyrosine")
         }
-        if(split_string[i]==="UGU" || split_string[i]==="UGC"){
+        else if(split_string[i]==="UGU" || split_string[i]==="UGC"){
             res.push("Cysteine")
         }
-        if(split_string[i]==="UGG"){
+        else if(split_string[i]==="UGG"){
             res.push("Tryptophan")
         }
-
+        else if (split_string[i] === "UAA" || split_string[i] === "UAG" || split_string[i] === "UGA") {
+            //res.push("STOP")
+            if(res[0]==="STOP"){
+                return []
+            }else{
+                return res
+            }
+        }
+        else if(split_string[i]==="UUA" || split_string[i]==="UUG"){
+            res.push("Leucine")
+        }
+        else{
+            throw "Invalid codon"
+        }
     }
+    return res
     
 }
 
