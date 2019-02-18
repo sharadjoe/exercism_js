@@ -7,13 +7,13 @@ describe('append entries to a list and return the new list', () => {
     expect(list1.append(list2)).toEqual(new List());
   });
 
-  xtest('empty list to list', () => {
+  test('empty list to list', () => {
     const list1 = new List([1, 2, 3, 4]);
     const list2 = new List();
     expect(list1.append(list2)).toEqual(list1);
   });
 
-  xtest('non-empty lists', () => {
+  test('non-empty lists', () => {
     const list1 = new List([1, 2]);
     const list2 = new List([2, 3, 4, 5]);
     expect(list1.append(list2).values).toEqual([1, 2, 2, 3, 4, 5]);
