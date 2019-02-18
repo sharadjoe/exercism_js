@@ -5,11 +5,11 @@ describe('ProteinTranslation', () => {
     expect(translate()).toEqual([]);
   });
 
-  xtest('Methionine codon translates into protein', () => {
+  test('Methionine codon translates into protein', () => {
     expect(translate('AUG')).toEqual(['Methionine']);
   });
 
-  xtest('Phenylalanine codons translate into protein', () => {
+  test('Phenylalanine codons translate into protein', () => {
     expect(translate('UUUUUC')).toEqual(['Phenylalanine', 'Phenylalanine']);
   });
 
